@@ -1,9 +1,12 @@
 from fastapi import FastAPI
 
+from app.routes.test import router
+
 app = FastAPI(
     title="ScamShield AI Backend",
     version="1.0.0"
 )
+
 
 @app.get("/")
 def root():
