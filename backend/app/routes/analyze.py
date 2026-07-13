@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException
 
 from app.models.analyze_request import AnalyzeRequest
 from app.agents.threat.agent import ThreatAgent
+from app.models.threat_response import ThreatResponse
 
 router = APIRouter(
     prefix="/analyze",
@@ -11,7 +12,7 @@ router = APIRouter(
 threat_agent = ThreatAgent()
 
 
-@router.post("/")
+@router.post("/",response_model=ThreatResponse)
 def analyze(request: AnalyzeRequest):
     try:
         result = threat_agent.analyze(request.text)
