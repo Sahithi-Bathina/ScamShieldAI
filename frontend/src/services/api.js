@@ -469,18 +469,19 @@ function generateDefaultRecommendations(threatLevel, context) {
       ? 'This content exhibits prominent red flags commonly associated with phishing and financial fraud. Exercise extreme caution.'
       : 'This content appears relatively safe, but always verify sender credentials through official verified channels.',
     immediate_actions: isHigh ? [
-      'DO NOT click any embedded links or download attachments.',
-      'DO NOT share your One-Time Password (OTP), UPI PIN, or banking passwords.',
-      'DO NOT send advance fees or security deposits via cryptocurrency or gift cards.',
-      'Block the sender on WhatsApp, Telegram, or SMS immediately.'
+      'Do not enter passwords, OTPs, banking details, card information, or other sensitive information.',
+      'Verify the organization through its official website.',
+      'Do not download unknown attachments/files.',
+      'Do not reply to or contact the suspicious sender using contact details in the message.',
+      'If credentials were already entered, change the password through the legitimate website and enable MFA where appropriate.'
     ] : [
-      'Cross-check the sender email domain with the company’s official website.',
-      'Ensure the browser shows a valid SSL lock and official domain spelling.'
+      'Verify that the message context matches the expected communication.',
+      'For sensitive actions, navigate directly to the organization\'s official website.',
+      'Do not rely solely on an automated scan before making financial or confidential decisions.'
     ],
     verification_steps: [
       'Visit the official website by typing the address directly into your browser rather than clicking provided links.',
-      'Contact official customer support using numbers published on legitimate statements or directories.',
-      'Verify employment offers on the company’s official LinkedIn career page or HR email.'
+      'Contact official customer support using numbers published on legitimate statements or directories.'
     ],
     reporting_channels: [
       { name: 'National Cyber Crime Portal (India)', url: 'https://cybercrime.gov.in', helpline: '1930' },
